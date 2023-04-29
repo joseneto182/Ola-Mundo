@@ -1,0 +1,107 @@
+import java.util.Scanner;
+
+public class teste9 {
+
+    public static void main(String[] args) {
+        
+    	//TODO: Abertura Inicial
+        System.out.println("   === PROGRAMA APS ===    \n");
+        System.out.println("|--------------------------|\n");
+        System.out.println("|     TEMA: ANSIEDADE      |\n");
+        System.out.println("|     DESENVOLVIDO POR     |\n");
+        System.out.println("|          NETTO           |\n");
+        System.out.println("|--------------------------|\n");
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bem-vindo(a) ao programa Ansiedade!");
+        System.out.println("Digite seu nome:");
+        //TODO: Nome do usuario
+        
+        String nome = scanner.nextLine();
+        int opcao; int contagem = 0;
+
+        //TODO: Menu
+        do {
+            System.out.println("MENU:");
+            System.out.println("1 - O que é ansiedade?");
+            System.out.println("2 - Sintomas de ansiedade.");
+            System.out.println("3 - Como controlar a ansiedade?");
+            System.out.println("4 - Controle de Ansiedade.");
+            System.out.println("5 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+
+            String resposta;
+			//TODO: Escolha uma opção.
+            switch (opcao) {
+                case 1:
+                	System.out.println("\nA ansiedade é um estado emocional que pode ser desencadeado por situações de estresse, medo ou apreensão. É normal sentir ansiedade em certas situações, mas quando essa sensação se torna constante e começa a afetar a qualidade de vida, é preciso buscar ajuda.\n");
+                	
+                	//TODO: implementar função para explicar o que é ansiedade
+                    break;
+                case 2:
+                	System.out.println("\n Os sintomas da ansiedade podem variar de pessoa para pessoa, mas alguns dos mais comuns são: palpitações, sudorese, tremores, tensão muscular, dificuldade para dormir, sensação de sufocamento, medo de perder o controle, entre outros.\n");
+                    //TODO: implementar função para exibir os sintomas de ansiedade
+                    break;
+                case 3:
+                	System.out.println("\n Algumas técnicas que podem ajudar a controlar a ansiedade são: exercícios físicos, meditação, respiração profunda, terapia, entre outros. É importante lembrar que cada pessoa pode ter um método mais efetivo para si, e que em casos mais graves é necessário buscar ajuda profissional.\n");
+                    //TODO: implementar função para explicar como controlar a ansiedade
+                    break;
+                case 4:
+                	System.out.println("Você está se sentindo ansioso? (sim/nao)");
+                	scanner.nextLine();
+                	resposta = scanner.nextLine();
+                	
+                	        
+                	if(resposta.equals("sim")) {
+                	    System.out.println("Ótimo! Vamos começar uma técnica de respiração para ajudar a controlar sua ansiedade.");
+                	    System.out.println("Feche os olhos e inspire profundamente pelo nariz contando até 4...");
+                	    System.out.println("Aguarde 4 segundos...");
+                	    System.out.println("Expire lentamente pela boca contando até 8...");
+                	    System.out.println("Recomece o ciclo de respiração.");
+                	            
+                	          
+					while(true) {
+                	    System.out.println("Você deseja continuar a técnica de respiração? (sim/nao)");
+                	    resposta = scanner.nextLine();
+                	                
+                	if(resposta.equals("nao")) {
+                	    System.out.println("Obrigado por usar nosso programa de controle de ansiedade!");
+                	break;
+                	} else if(resposta.equals("sim")) {
+                	    contagem++;
+                	    System.out.println("Ótimo! Vamos continuar a técnica de respiração...");
+                	    System.out.println("Feche os olhos e inspire profundamente pelo nariz contando até 4...");
+                	    System.out.println("Aguarde 4 segundos...");
+                	    System.out.println("Expire lentamente pela boca contando até 8...");
+                	    System.out.println("Recomece o ciclo de respiração.");
+                	} else {
+                	    System.out.println("Resposta inválida! Por favor, responda 'sim' ou 'nao'.");
+                	}
+               }
+                	   
+                	System.out.println("Você fez a técnica de respiração " + contagem + " vezes.");
+                    } else if(resposta.equals("nao")) {
+                	System.out.println("Que pena! Esperamos que você se sinta melhor em breve.");
+                	        } else {
+                	System.out.println("Resposta inválida! Por favor, responda 'sim' ou 'nao'.");
+                	        }
+                    break;
+                
+                case 5:
+                    System.out.println("\n Saindo...\n");
+                    break;
+                default:
+                    System.out.println("\n Opção inválida!\n");
+                    break;
+            }
+
+        } while (opcao != 5);
+        
+        
+        System.out.println("Obrigado por participar! Espero ter ajudado.");
+        //TODO: Agradecendo.
+        
+        scanner.close();
+    }
+}
